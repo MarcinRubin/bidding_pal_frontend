@@ -1,9 +1,10 @@
-import { Flex, Icon, Text, Link } from "@chakra-ui/react";
+import { Flex, Icon, Text, Link  } from "@chakra-ui/react";
+import { Link as ReactRouterLink } from "react-router-dom";
 
 const NavLink = ({ link, ...rest }) => {
   const { label, icon, href } = link;
   return (
-    <Link>
+    <Link as={ReactRouterLink} to={href}>
         <Flex
           align="center"
           p="4"

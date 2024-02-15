@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLoaderData, useNavigation } from "react-router-dom";
 import fetchData from "../customHooks/loaderFetch";
-import { Card, CardBody, Stack, Heading, Flex, VStack, HStack, Text, Button } from "@chakra-ui/react";
+import { Card, CardBody, Stack, Heading, Flex, VStack, HStack, Text, Button, Spinner } from "@chakra-ui/react";
 import DealContainer from "../components/DealContainer";
 import BidTabTable from "../components/BidTabTable";
 import CommentSection from "../components/CommentSection";
@@ -23,7 +23,7 @@ const HomeworkDeal = () => {
   }
 
   if (navigation.state === "loading") {
-    return <h1>Loading!</h1>;
+    return <Flex w="100%" justifyContent="center"><Spinner size="xl" color="green.600"/></Flex>;
   }
 
   return (

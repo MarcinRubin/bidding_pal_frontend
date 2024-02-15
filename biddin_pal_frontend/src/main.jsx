@@ -6,9 +6,9 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Root from './routes/root';
+import Root from './routes/Root';
 import ErrorPage from './ErrorPage';
-import Homework from './routes/Homework';
+import Homework , {loader as homeworkLoader} from './routes/Homework';
 import HomeworkDeal, {
   loader as dealLoader,
 } from './routes/HomeworkDeal';
@@ -22,6 +22,7 @@ const router = createBrowserRouter([
       {
         path: "homework/",
         element: <Homework />,
+        loader: homeworkLoader
       },
       {
         path: "homework/:dealId",
