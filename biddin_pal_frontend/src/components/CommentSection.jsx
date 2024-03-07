@@ -4,7 +4,7 @@ import { useDisclosure } from '@chakra-ui/react';
 import EditComment from './EditComment';
 import { client } from '../customHooks/axiosClient';
 
-const CommentSection = ({bid, setPaths, paths}) => {
+const CommentSection = ({bid, deal_id, setPaths}) => {
   
   const [comment, setComment] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -20,7 +20,6 @@ const CommentSection = ({bid, setPaths, paths}) => {
 
   const handleSubmit = async () => {
     const response = await client.patch(`/api/bids/${bid.id}/`, {"comment": comment});
-    const deal_id = response.data.deal.id;
     const response2 = await client.get(`/api/deals/${deal_id}/get_all_paths/`);
     const dealData = await response2.data;
     setPaths(dealData["paths"]);

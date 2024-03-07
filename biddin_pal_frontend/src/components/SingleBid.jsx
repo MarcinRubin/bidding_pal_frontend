@@ -23,6 +23,7 @@ const SingleBid = ({children}) => {
     }
 
     const renderBid = (bid) => {
+        
         if (bid.includes("nt")){
             bid = bid.replace("nt", "")
             return(
@@ -32,9 +33,9 @@ const SingleBid = ({children}) => {
             )
         }
 
-        if (bid.includes("pass")){
+        if (bid === "pass" || bid === "?"){
             return(
-                <Text>
+                <Text as="span">
                     {bid}
                 </Text>
             )
@@ -45,7 +46,7 @@ const SingleBid = ({children}) => {
             if( bid.includes(suit) ){
                 bid = bid.replace(suit, "");
                 return(
-                    <Text>
+                    <Text as="span">
                         {bid}<Icon as={bidMapping[suit].icon} color={bidMapping[suit].color}/>
                     </Text>
                 )

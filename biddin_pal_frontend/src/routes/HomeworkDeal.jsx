@@ -40,10 +40,10 @@ const HomeworkDeal = () => {
         <Stack mt="6" spacing="3">
           <DealContainer
             player={dealData["player"]}
-            n={dealData["n"]}
-            s={dealData["s"]}
-            e={dealData["e"]}
-            w={dealData["w"]}
+            n_hand={dealData["n"]}
+            s_hand={dealData["s"]}
+            e_hand={dealData["e"]}
+            w_hand={dealData["w"]}
           />
           <Heading size="md" textAlign="center">
             {dealData["comment"]}
@@ -58,9 +58,9 @@ const HomeworkDeal = () => {
         handleChangeActiveComment = {handleChangeActiveComment}
     />
     <CommentSection
-      bid = {paths[bidArray[0]][bidArray[1]]} 
+      bid = {paths[bidArray[0]][bidArray[1]]}
+      deal_id={dealData.id} 
       setPaths = {setPaths}
-      paths = {paths} 
     />
     </VStack>
     

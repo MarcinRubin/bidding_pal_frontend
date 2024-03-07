@@ -9,17 +9,16 @@ const suits = [
     {icon: BsSuitClubFill, color: "black"}
 ]
 
-const DealContainer = ({n, s, e, w, player}) => {
-    
+const DealContainer = ({n_hand, s_hand, e_hand, w_hand, player, ...props}) => {
   return (
-    <Grid templateColumns="repeat(3, 1fr)" templateRows='repeat(3, 1fr)' gap={1} w="100%">
+    <Grid templateColumns="repeat(3, 1fr)" templateRows='repeat(3, 1fr)' gap={1} {...props}>
       <GridItem  display ="flex" w="100%" aspectRatio="1/1" bg="green.200" textAlign="center" justifyContent="center" alignItems="center" fontSize="1.5em">
             <Text>{player}</Text>
             </GridItem>
       <GridItem w="100%" aspectRatio="1/1" bg="green.200" />
       <GridItem w="100%" aspectRatio="1/1" bg="green.200" />
       <GridItem w="100%" aspectRatio="1/1" bg="green.200">
-      {w.split(".").map((item, idx) => (
+      {w_hand.split(".").map((item, idx) => (
         <HStack key={idx} gap={1} px={1}>
             <Icon as={suits[idx].icon} color={suits[idx].color}/><Text>{item}</Text>
         </HStack>
@@ -45,7 +44,7 @@ const DealContainer = ({n, s, e, w, player}) => {
 
       </GridItem>
       <GridItem w="100%" aspectRatio="1/1" bg="green.200">
-      {e.split(".").map((item, idx) => (
+      {e_hand.split(".").map((item, idx) => (
         <HStack key={idx} gap={1} px={1}>
             <Icon as={suits[idx].icon} color={suits[idx].color}/><Text>{item}</Text>
         </HStack>

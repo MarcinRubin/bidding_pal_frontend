@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-export default function useFetch(url) {
+export default function useFetchSetters(url) {
   axios.defaults.xsrfCookieName = "csrftoken";
   axios.defaults.xsrfHeaderName = "X-CSRFToken";
   axios.defaults.withCredentials = true;
@@ -31,5 +31,5 @@ export default function useFetch(url) {
     fetchData();
   }, []);
 
-  return [data, error, loading];
+  return [data, setData, error, loading];
 }

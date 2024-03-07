@@ -8,7 +8,7 @@ const LinkItems = [
     { label: "Prace domowe", icon: MoonIcon, href: "/homework" },
     { label: "Inne ciekawe rozdania", icon: MoonIcon, href: "/" },
     { label: "Quiz - cała licytacja", icon: MoonIcon, href: "/" },
-    { label: "Quiz - kolejna odzywka", icon: MoonIcon, href: "/" },
+    { label: "Quiz - kolejna odzywka", icon: MoonIcon, href: "/bid_quiz" },
   ];
 
 const Sidebar = ({onClose, ...rest}) => {

@@ -12,6 +12,7 @@ import Homework , {loader as homeworkLoader} from './routes/Homework';
 import HomeworkDeal, {
   loader as dealLoader,
 } from './routes/HomeworkDeal';
+import NextBidQuiz from './routes/NextBidQuiz';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
         path: "homework/:dealId",
         element: <HomeworkDeal />,
         loader: dealLoader
+      },
+      {
+        path: "bid_quiz/",
+        element: <NextBidQuiz />,
       }
     ],
   },

@@ -4,8 +4,6 @@ import BidTable from "./BidTable"
 
 const BidTabTable = ({paths, handleChangeActiveComment}) => {
 
-  console.log(paths);
-
   return (
     <Tabs defaultIndex={0}>
       <TabList>

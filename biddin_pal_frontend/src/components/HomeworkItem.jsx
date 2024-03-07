@@ -25,10 +25,10 @@ const HomeworkItem = ({ deal }) => {
         <Stack mt="6" spacing="3">
           <DealContainer
             player={deal.player}
-            n={deal.n}
-            s={deal.s}
-            e={deal.e}
-            w={deal.w}
+            n_hand={deal.n}
+            s_hand={deal.s}
+            e_hand={deal.e}
+            w_hand={deal.w}
           />
           <Heading size="md" textAlign="center">
             {deal.comment}
