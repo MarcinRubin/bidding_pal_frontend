@@ -35,11 +35,11 @@ const ChooseBidModal = ({ isOpen, onClose, data, setData }) => {
         if (validator1 || validator2) {
             const bid = Object.values(bidState).join("");
             let newData = { ...data };
-            newData.path[newData.path.length - 1] = { name: bid.toLowerCase() };
+            newData.path[newData.path.length - 1] = {...newData.path[newData.path.length - 1], bid: bid.toLowerCase()};
             setData(newData);
         } else {
             let newData = { ...data };
-            newData.path[newData.path.length - 1] = { name: "?" };
+            newData.path[newData.path.length - 1] = {...newData.path[newData.path.length - 1],  bid: "?" };
             setData(newData);
             toast({
                 title: "Nieprawidłowa odzywka",

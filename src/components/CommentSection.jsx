@@ -2,6 +2,7 @@ import { Text, Card, CardBody, Heading, Divider, HStack, Button} from '@chakra-u
 import { useState, useEffect } from 'react';
 import { useDisclosure } from '@chakra-ui/react';
 import EditComment from './EditComment';
+import SingleBid from './SingleBid';
 import { client } from '../customHooks/axiosClient';
 
 const CommentSection = ({bid, deal_id, setPaths}) => {
@@ -40,7 +41,7 @@ const CommentSection = ({bid, deal_id, setPaths}) => {
     <Card w="360px" borderColor="green.500" borderWidth={3}>
         <CardBody>
             <Heading size="sm" textAlign="center" mb={2}>
-                Komentarz do odzywki {bid.bid}
+                Komentarz do odzywki <SingleBid>{bid.bid}</SingleBid>
             </Heading>
             <Divider borderColor="green.500" borderWidth={1} mb={1}/>
             <Text>{bid.comment ? bid.comment : "Brak komentarza do odzywki"}</Text>

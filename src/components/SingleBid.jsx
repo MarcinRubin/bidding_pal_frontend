@@ -27,16 +27,16 @@ const SingleBid = ({children}) => {
         if (bid.includes("nt")){
             bid = bid.replace("nt", "")
             return(
-                <Text>
+                <Text as="span">
                     {bid}<Text as="span" color="blue.500">NT</Text>
                 </Text>
             )
         }
 
-        if (bid === "pass" || bid === "?"){
+        if (["pas", "?", "x", "xx"].includes(bid)){
             return(
                 <Text as="span">
-                    {bid}
+                    {bid.toUpperCase()}
                 </Text>
             )
         }
@@ -63,5 +63,3 @@ const SingleBid = ({children}) => {
 }
 
 export default SingleBid
-
-//<Icon as={suits[idx].icon}>

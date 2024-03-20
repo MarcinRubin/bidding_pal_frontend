@@ -15,7 +15,7 @@ const HomeworkDeal = () => {
   const dealData = useLoaderData();
   const navigation = useNavigation();
   const [paths, setPaths] = useState(dealData["paths"]);
-  const [bidArray, setBidArray] = useState([0, 0]);
+  const [bidArray, setBidArray] = useState([0, 0]); 
 
   const handleChangeActiveComment = (pathNumber, idx) => {
     const newBidArray = [pathNumber, idx];

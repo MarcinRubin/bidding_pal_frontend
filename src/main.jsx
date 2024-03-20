@@ -12,7 +12,7 @@ import Homework , {loader as homeworkLoader} from './routes/Homework';
 import HomeworkDeal, {
   loader as dealLoader,
 } from './routes/HomeworkDeal';
-import NextBidQuiz from './routes/NextBidQuiz';
+import NextBidQuiz, {loader as quizLoader} from './routes/NextBidQuiz';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +33,7 @@ const router = createBrowserRouter([
       {
         path: "bid_quiz/",
         element: <NextBidQuiz />,
+        loader: quizLoader
       }
     ],
   },

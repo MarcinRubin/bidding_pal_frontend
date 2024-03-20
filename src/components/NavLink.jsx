@@ -21,7 +21,7 @@ const NavLink = ({ link, ...rest }) => {
           {icon && (
             <Icon
               mr="4"
-              fontSize="16"
+              fontSize="18"
               _groupHover={{
                 color: "white",
               }}

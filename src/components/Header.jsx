@@ -32,7 +32,7 @@ const Header = ({onOpen}) => {
       fontFamily="monospace"
       fontWeight="bold"
     >
-      Logo
+      Deals Library
     </Text>
     <HeaderRight />
   </Flex>

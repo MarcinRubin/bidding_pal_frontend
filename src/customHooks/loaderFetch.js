@@ -7,6 +7,7 @@ export default async function fetchData(url) {
 
   const client = axios.create({
     baseURL: "http://localhost:8000",
+    // baseURL: "http://biddingpal-dev.eu-central-1.elasticbeanstalk.com/",
   });
 
   const response = await client.get(url);

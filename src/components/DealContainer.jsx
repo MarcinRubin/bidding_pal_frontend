@@ -18,11 +18,11 @@ const DealContainer = ({n_hand, s_hand, e_hand, w_hand, player, ...props}) => {
       <GridItem w="100%" aspectRatio="1/1" bg="green.200" />
       <GridItem w="100%" aspectRatio="1/1" bg="green.200" />
       <GridItem w="100%" aspectRatio="1/1" bg="green.200">
-      {w_hand.split(".").map((item, idx) => (
+      {w_hand ? w_hand.split(".").map((item, idx) => (
         <HStack key={idx} gap={1} px={1}>
-            <Icon as={suits[idx].icon} color={suits[idx].color}/><Text>{item}</Text>
+            <Icon as={suits[idx].icon} color={suits[idx].color}/><Text>{item.replace("T", "10")}</Text>
         </HStack>
-        ))} 
+        )) : null} 
       </GridItem>
       <GridItem w="100%" aspectRatio="1/1" bg="green.200">
         <VStack h="100%" justifyContent="space-between" gap={0} p={1.5}>
@@ -44,11 +44,11 @@ const DealContainer = ({n_hand, s_hand, e_hand, w_hand, player, ...props}) => {
 
       </GridItem>
       <GridItem w="100%" aspectRatio="1/1" bg="green.200">
-      {e_hand.split(".").map((item, idx) => (
+      {e_hand ? e_hand.split(".").map((item, idx) => (
         <HStack key={idx} gap={1} px={1}>
-            <Icon as={suits[idx].icon} color={suits[idx].color}/><Text>{item}</Text>
+            <Icon as={suits[idx].icon} color={suits[idx].color}/><Text>{item.replace("T", "10")}</Text>
         </HStack>
-        ))} 
+        )): null} 
       </GridItem>
       <GridItem w="100%" aspectRatio="1/1" bg="green.200" />
       <GridItem w="100%" aspectRatio="1/1" bg="green.200"/>
