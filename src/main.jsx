@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom/client'
 import { ChakraProvider } from '@chakra-ui/react'
 import {
   createBrowserRouter,
+  createHashRouter,
   RouterProvider,
 } from "react-router-dom";
 import Root from './routes/Root';
@@ -14,7 +15,33 @@ import HomeworkDeal, {
 } from './routes/HomeworkDeal';
 import NextBidQuiz, {loader as quizLoader} from './routes/NextBidQuiz';
 
-const router = createBrowserRouter([
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <Root />,
+//     errorElement: <ErrorPage />,
+//     children: [
+//       {
+//         path: "homework/",
+//         element: <Homework />,
+//         loader: homeworkLoader
+//       },
+//       {
+//         path: "homework/:dealId",
+//         element: <HomeworkDeal />,
+//         loader: dealLoader
+//       },
+//       {
+//         path: "bid_quiz/",
+//         element: <NextBidQuiz />,
+//         loader: quizLoader
+//       }
+//     ],
+//   },
+// ]);
+
+
+const router = createHashRouter([
   {
     path: "/",
     element: <Root />,
